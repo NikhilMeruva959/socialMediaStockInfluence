@@ -10,12 +10,12 @@ const Description = () => {
   const clickedElement = (e) => {
     console.log("hello");
     console.log(e);
-    /*history.push({
+    history.push({
       pathnae: "/information",
       state: {
         symbol: "",
       },
-    });*/
+    });
   };
 
   return (
