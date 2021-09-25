@@ -1,42 +1,97 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: slategray;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  font-family: "cooperplate";
-}
-.logo {
-  display: inline-block;
-  vertical-align: top;
-  width: 3%;
-  height: 3%;
-  margin-left: 20px;
-}
-.name{
-  color: whitesmoke;
-  text-align: center;
-  padding: 15% 20% 0% 38%;
-  text-decoration: none;
-  font-size: 35px;
 
-}
+@media (max-width: 1024px) {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: slategray;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    font-family: "cooperplate";
+  }
+  .logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 5%;
+    height: 5%;
+    margin-left: 20px;
+  }
+  .name{
+    color: whitesmoke;
+    text-align: center;
+    padding-left: 27%;
+    padding-right: 10%;
+    text-decoration: none;
+    font-size: 45px;
 
-li {
-  float: right;
-}
+  }
 
-li a {
-  display: block;
-  color: whitesmoke;
-  text-align: center;
-  padding: 14px 30px;
-  text-decoration: none;
-}
+  li {
+    float: right;
+  }
 
-li a:hover {
-  background-color:slategray;
+  li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 23px;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color:slategray;
+  }
+}
+@media (min-width: 1440px) {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: slategray;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    font-family: "cooperplate";
+  }
+  .logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 4.5%;
+    height: 4.5%;
+    margin-left: 20px;
+  }
+  .name{
+    color: whitesmoke;
+    text-align: center;
+    padding-left: 31%;
+    text-decoration: none;
+    font-size: 50px;
+
+  }
+
+  li {
+    float: right;
+  }
+
+  li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 23px;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    font-size: 25px;
+
+  }
+
+  li a:hover {
+    background-color:slategray;
+  }
+
 }
