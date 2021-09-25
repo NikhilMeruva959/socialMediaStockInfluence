@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/header/header";
-import Home from "./components/home/home.jsx";
+import Home from "./components/home/home.js";
 import Description from "./components/description/description.jsx";
 import Trending from "./components/trending/trending";
 import { Route, BrowserRouter } from "react-router-dom";
