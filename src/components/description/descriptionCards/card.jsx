@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 const Card = ({ symbol }) => {
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
+  const [info, setInfo] = useState("");
 
   const history = useHistory();
 
@@ -24,16 +25,18 @@ const Card = ({ symbol }) => {
       )
       .then((res) => {
         setName(res.data.companyName);
+        setInfo(res.data);
       });
   }, []);
 
   const clickedCard = () => {
     history.push({
-      pathnae: "/information",
+      pathname: "/information",
       state: {
         symbol: symbol,
         name: name,
         image: image,
+        info: info,
       },
     });
   };

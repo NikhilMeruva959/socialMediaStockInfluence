@@ -1,0 +1,37 @@
+.stock {
+  display: flex;
+  margin-top: 50px;
+}
+
+.left {
+  flex: 0.5;
+  overflow: hidden;
+  padding-left: 4em;
+  padding-top: 1em;
+}
+
+.right {
+  flex: 0.5;
+  position: relative;
+}
+
+.stock-info {
+  justify-content: space-around;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 80%;
+  height: 600px;
+  box-shadow: 0px 0px 15px -8px black;
+  border-radius: 20px;
+}
+
+.stock-info {
+  float: left;
+}
+
+.desc {
+  margin-left: 10px;
+  margin-right: 10px;
+  max-height: 200px;
+  overflow: scroll;
+}
