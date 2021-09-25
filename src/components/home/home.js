@@ -19,7 +19,7 @@ const home = () => {
               <TrendingCards title="tsla" className="TrendingCards" />
               <TrendingCards title="tsla" className="TrendingCards" />
               <TrendingCards title="tsla" className="TrendingCards" />
-            </div> */}
+            </div>  */}
 
         </div>
     </body>
