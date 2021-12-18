@@ -1,8 +1,8 @@
-import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
-import Navbar from "../../../node_modules/react-bootstrap/esm/Navbar";
-import Nav from "../../../node_modules/react-bootstrap/esm/Nav";
-import Container from "../../../node_modules/react-bootstrap/esm/Container";
-import NavDropdown from "../../../node_modules/react-bootstrap/esm/NavDropdown";
+import "bootstrap/dist/css/bootstrap.css";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Header = () => (
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
