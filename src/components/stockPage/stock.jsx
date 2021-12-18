@@ -1,8 +1,25 @@
 import React from "react";
 import "./stock.css";
+import { fetchTweets } from "../../api/index.js";
 
 const Stock = (props) => {
-  console.log(props.location.state);
+  let stockSymbol = props.location.state.symbol;
+
+  const data = {
+    tsla: ["Elon Musk", "Tesla"],
+    aapl: ["Tim Cook", "Apple"],
+  };
+
+  const gettingTweets = async () => {
+    let array = data[stockSymbol];
+    for (let i = 0; i < array.length; i++) {
+      let { data } = await fetchTweets(array[i]);
+      console.log(data);
+    }
+  };
+
+  gettingTweets();
+
   return (
     <div className="stock" id="stock">
       <div className="left">
@@ -26,7 +43,7 @@ const Stock = (props) => {
 
       <div className="right">
         <div className="tweets">
-          <h2>Insert tweets right here</h2>
+          <h2>{gettingTweets}</h2>
         </div>
       </div>
     </div>
