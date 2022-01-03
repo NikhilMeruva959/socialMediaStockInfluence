@@ -63,3 +63,11 @@
 .stock-info:hover {
   transform: scale(1.04);
 }
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}

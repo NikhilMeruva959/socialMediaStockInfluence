@@ -1,23 +1,8 @@
 import React from "react";
 import "./description.css";
 import Card from "./descriptionCards/card";
-import { useHistory } from "react-router-dom";
-import { Row, Col } from "react-simple-flex-grid";
 
 const Description = () => {
-  const history = useHistory();
-
-  const clickedElement = (e) => {
-    console.log("hello");
-    console.log(e);
-    history.push({
-      pathnae: "/information",
-      state: {
-        symbol: "",
-      },
-    });
-  };
-
   return (
     <div className="description" id="description">
       <div className="intro">

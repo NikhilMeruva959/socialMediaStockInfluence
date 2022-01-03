@@ -27,7 +27,7 @@ const Card = ({ symbol }) => {
         setName(res.data.companyName);
         setInfo(res.data);
       });
-  }, []);
+  }, [symbol]);
 
   const clickedCard = () => {
     history.push({
