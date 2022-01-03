@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactHighcharts from "react-highcharts/ReactHighstock.src";
-import { getStockHistoricalData } from "../../api/index.js";
-import priceData from "./data.json";
 import moment from "moment";
 
 const Chart = (props) => {
@@ -41,9 +39,7 @@ const Chart = (props) => {
         gapSize: 6,
       },
     },
-    rangeSelector: {
-      selected: 1,
-    },
+
     title: {
       text: `${props.name.toUpperCase()} stock price`,
     },
