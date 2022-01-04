@@ -12,9 +12,16 @@ const Description = () => {
       </div>
       <center>
         <div className="companies">
-          <Card symbol="tsla" className="card" value="tsla" />
-          <Card symbol="gme" className="card" />
-          <Card symbol="clov" className="card" />
+          <div className="all-cards">
+            <Card symbol="tsla" className="card" value="tsla" />
+            <Card symbol="gme" className="card" />
+            <Card symbol="clov" className="card" />
+            <Card symbol="aapl" className="card" />
+            <Card symbol="hood" className="card" />
+            <Card symbol="amc" className="card" />
+            <Card symbol="spy" className="card" />
+            <Card symbol="nvda" className="card" />
+          </div>
         </div>
       </center>
     </div>
