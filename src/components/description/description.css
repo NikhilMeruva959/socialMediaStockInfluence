@@ -1,0 +1,22 @@
+h2 {
+  font-family: "copperplate";
+}
+
+.intro {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.companies {
+  display: table;
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  box-shadow: 0px 0px 15px -8px blue;
+}
+.card {
+  float: left;
+}
+.card:hover {
+  transform: scale(1.1);
+}
