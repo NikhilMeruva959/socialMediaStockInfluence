@@ -1,8 +1,8 @@
-import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
-import Navbar from "../../../node_modules/react-bootstrap/esm/Navbar";
-import Nav from "../../../node_modules/react-bootstrap/esm/Nav";
-import Container from "../../../node_modules/react-bootstrap/esm/Container";
-import NavDropdown from "../../../node_modules/react-bootstrap/esm/NavDropdown";
+import "bootstrap/dist/css/bootstrap.css";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Header = () => (
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -11,15 +11,13 @@ const Header = () => (
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-
           <Nav.Link href="/getStarted">Get Started</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
           <Nav.Link href="/description">All Stocks</Nav.Link>
-
         </Nav>
         <Nav>
           <Nav.Link href="/contact">Contact</Nav.Link>
-          <Nav.Link eventKey={2} href="/home">
+          <Nav.Link eventKey={2} href="/">
             Home
           </Nav.Link>
         </Nav>
