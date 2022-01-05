@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
+import HeroSection from "../HeroSection/HeroSection";
 const trendingCompanies = [];
 
 export default class Home extends Component {
-
-    render() {
-        return(
-            <h1>Hello there Home</h1>
-        )
-    }
+  render() {
+    return <HeroSection />;
+  }
 }
