@@ -102,8 +102,7 @@ export const getHourChange = async (date, data) => {
 
   if (price2 === "n/a") return "n/a";
   else {
-    let priceDifference = ((price2 - price1) / price1) * 100;
-    console.log(priceDifference);
+    let priceDifference = ((price1 - price2) / price2) * 100;
     return priceDifference.toFixed(2);
   }
 };

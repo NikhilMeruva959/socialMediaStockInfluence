@@ -8,6 +8,7 @@ const Card = ({ symbol }) => {
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
   const [info, setInfo] = useState("");
+  const [stockInfo, setStockInfo] = useState("");
 
   const history = useHistory();
 
@@ -27,6 +28,13 @@ const Card = ({ symbol }) => {
         setName(res.data.companyName);
         setInfo(res.data);
       });
+    axios
+      .get(
+        `https://cloud.iexapis.com/stable/stock/${symbol}/quote?token=sk_92243c3991344a2b957410a7d90fbca0`
+      )
+      .then((res) => {
+        setStockInfo(res.data);
+      });
   }, [symbol]);
 
   const clickedCard = () => {
@@ -37,6 +45,7 @@ const Card = ({ symbol }) => {
         name: name,
         image: image,
         info: info,
+        stockInfo: stockInfo,
       },
     });
   };

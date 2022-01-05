@@ -19,6 +19,7 @@ const Stock = (props) => {
   const [popularTweets, setPopularTweets] = React.useState("");
   const [pOneHourChange, setPOneHourChange] = React.useState("");
   const [pLongTermChange, setPLongTermChange] = React.useState("");
+  const [latestDate, setLatestDate] = React.useState("");
 
   // twitter username queries that will be looked up.
   // need to reformat table where tweets are displayed
@@ -27,13 +28,21 @@ const Stock = (props) => {
     aapl: ["tim_cook"],
     gme: ["GameStop"],
     clov: ["CloverHealth"],
+    hood: ["RobinhoodApp"],
+    amc: ["AMCTheatres"],
+    spy: ["StateStreetGA"],
+    nvda: ["nvidia"],
   };
 
   const queries = {
     tsla: ["tesla", "elon musk"],
-    aapl: ["tim cook"],
+    aapl: ["tim cook", "apple"],
     gme: ["GameStop"],
     clov: ["Clover Health"],
+    hood: ["Robinhood"],
+    amc: ["amc"],
+    spy: ["State Street Global Advisors"],
+    nvda: ["NVIDIA"],
   };
 
   const map = {
@@ -53,6 +62,9 @@ const Stock = (props) => {
 
   useEffect(async () => {
     let result = await getStockChartData(stockSymbol);
+    let unixTimeL = result[result.length - 1][0];
+    let latestDate = new Date(unixTimeL);
+    setLatestDate(latestDate.toString());
     setStockData(result);
     let array = data[stockSymbol];
     let tweets = [];
@@ -129,74 +141,108 @@ const Stock = (props) => {
           <div className="stock-info">
             <center>
               <div className="stock-name">
+                <div></div>
                 <h1 className="stock-info2">{props.location.state.name}</h1>
                 <img
-                  className="stock-info2"
+                  className="stock-image"
                   src={props.location.state.image}
                   alt=""
                 ></img>
-                <h3>Current CEO : {props.location.state.info.CEO}</h3>
+                {props.location.state.info.CEO !== "" && (
+                  <h3>Current CEO : {props.location.state.info.CEO}</h3>
+                )}
+
                 <div className="desc">
                   <p>{props.location.state.info.description}</p>
                 </div>
+
+                <div className="stock-info-info">
+                  <h3>
+                    Latest Stock Information from{" "}
+                    {props.location.state.stockInfo.latestTime}
+                  </h3>
+                  <h6>
+                    Current Price :{" "}
+                    {props.location.state.stockInfo.iexRealtimePrice +
+                      " (" +
+                      props.location.state.stockInfo.changePercent +
+                      "%)"}
+                  </h6>
+                  <h6>
+                    Previous Close :{" "}
+                    {props.location.state.stockInfo.previousClose}
+                  </h6>
+                  <h6>
+                    52 Week Low - High : [
+                    {props.location.state.stockInfo.week52Low} ,{" "}
+                    {props.location.state.stockInfo.week52High}]
+                  </h6>
+                </div>
               </div>
             </center>
-          </div>
-          <div className="right">
-            <div className="tweets"></div>
           </div>
         </div>
 
         <div className="right">
           <div className="tweets">
             {tweets.length === 0 ? (
-              <h2>No Tweets generated right now</h2>
+              <h2>Loading Tweets ...</h2>
             ) : (
               <div>
                 {tweets.map((table) => (
                   <div className="table-with-title">
-                    <h3 className="table-title">@{data[stockSymbol][k++]}</h3>
+                    <a
+                      href={"https://twitter.com/" + data[stockSymbol][k]}
+                      target="_blank"
+                    >
+                      <h3 className="table-title">@{data[stockSymbol][k++]}</h3>
+                    </a>
+
                     <table className="tweets-table">
                       <thead>
-                        <th>Tweets</th>
-                        <th>Time</th>
-                        <th>1 HR Change</th>
-                        <th>24 HR Change</th>
+                        <th className="tweet">Tweets</th>
+                        <th className="time">Time</th>
+                        <th className="short-change">1 HR Change</th>
+                        <th className="long-change">24 HR Change</th>
                       </thead>
                       <tbody>
                         {table.map((tweet) => (
                           <tr className="tweets-row">
                             <td>
-                              <a href={links[linkIterator++]} target="_blank">
+                              <a
+                                href={links[linkIterator++]}
+                                target="_blank"
+                                className="tweet"
+                              >
                                 {tweet[0]}
                               </a>
                             </td>
-                            <td>{tweet[1]}</td>
+                            <td className="time">{tweet[1]}</td>
 
                             {oneHourChange[++oneIterator] === "n/a" && (
-                              <td>-</td>
+                              <td className="short-change">-</td>
                             )}
                             {oneHourChange[oneIterator] > 0 && (
-                              <td className="green">
+                              <td className="green short-change">
                                 {oneHourChange[oneIterator]}%
                               </td>
                             )}
                             {oneHourChange[oneIterator] < 0 && (
-                              <td className="red">
+                              <td className="red short-change">
                                 {oneHourChange[oneIterator]}%
                               </td>
                             )}
 
                             {LongTermChange[++longTermIterator] === "n/a" && (
-                              <td>-</td>
+                              <td className="long-change">-</td>
                             )}
                             {LongTermChange[longTermIterator] > 0 && (
-                              <td className="green">
+                              <td className="green long-change">
                                 {LongTermChange[longTermIterator]}%
                               </td>
                             )}
                             {LongTermChange[longTermIterator] < 0 && (
-                              <td className="red">
+                              <td className="red long-change">
                                 {LongTermChange[longTermIterator]}%
                               </td>
                             )}
@@ -207,49 +253,53 @@ const Stock = (props) => {
                   </div>
                 ))}
 
-                {popularTweets.length === 0 ? (
-                  <h1>No popular tweets right now</h1>
-                ) : (
+                {popularTweets.length > 0 && (
                   <div className="table-with-title">
-                    <h3 className="table-title">Popular Tweets</h3>
+                    <h3 className="table-title">
+                      Popular Tweets & Recent News
+                    </h3>
                     <table className="tweets-table">
                       <thead>
-                        <th>Tweets</th>
-                        <th>Time</th>
-                        <th>1 HR Change</th>
-                        <th>24 HR Change</th>
+                        <th className="tweet">Tweets</th>
+                        <th className="time">Time</th>
+                        <th className="short-change">1 HR Change</th>
+                        <th className="long-change">24 HR Change</th>
                       </thead>
                       <tbody>
                         {popularTweets.map((tweet) => (
                           <tr className="tweets-row">
-                            <a href={tweet[2]} target="_blank">
+                            <a
+                              href={tweet[2]}
+                              target="_blank"
+                              className="tweet"
+                            >
                               {tweet[0]}
                             </a>
-                            <td>{tweet[1]}</td>
+                            <td className="time">{tweet[1]}</td>
                             {pOneHourChange[++onePIterator] === "n/a" && (
-                              <td>-</td>
+                              <td className="short-change">-</td>
                             )}
                             {pOneHourChange[onePIterator] > 0 && (
-                              <td className="green">
+                              <td className="green short-change">
                                 {pOneHourChange[onePIterator]}%
                               </td>
                             )}
                             {pOneHourChange[onePIterator] < 0 && (
-                              <td className="red">
+                              <td className="red short-change">
                                 {pOneHourChange[onePIterator]}%
                               </td>
                             )}
 
                             {pLongTermChange[++longPIterator] === "n/a" && (
-                              <td>-</td>
+                              <td className="long-change">-</td>
                             )}
                             {pLongTermChange[longPIterator] > 0 && (
-                              <td className="green">
+                              <td className="green long-change">
                                 {pLongTermChange[longPIterator]}%
                               </td>
                             )}
                             {pLongTermChange[longPIterator] < 0 && (
-                              <td className="red">
+                              <td className="red long-change">
                                 {pLongTermChange[longPIterator]}%
                               </td>
                             )}
@@ -261,6 +311,9 @@ const Stock = (props) => {
                 )}
               </div>
             )}
+          </div>
+          <div className="last-updated">
+            <p>Stock Change Information Reflect From {latestDate}</p>
           </div>
         </div>
       </div>

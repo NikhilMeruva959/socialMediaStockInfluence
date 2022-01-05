@@ -29,9 +29,16 @@
   transition: all 0.5s ease;
 }
 
+.stock-image {
+  width: 50%;
+}
+
 .table-with-title {
   box-shadow: 0px 0px 15px -8px blue;
   border-radius: 10px;
+  justify-content: space-between;
+  padding: 1em;
+  margin-bottom: 50px;
 }
 
 .stock-info {
@@ -41,19 +48,22 @@
 .desc {
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 10px;
   overflow: scroll;
+  border-bottom: ridge;
 }
 
 .tweets-table {
   border-collapse: collapse;
   overflow: scroll;
   max-height: 200px;
-  /*background-color: #c8dfda;*/
-  margin: 15px;
+  border-color: purple;
+  margin: 20px;
 }
 
 .tweets-row {
-  border: 0.5px solid white;
+  margin-bottom: 50px;
+  border-bottom: 0.5px ridge;
 }
 
 .table-title {
@@ -70,4 +80,24 @@
 
 .red {
   color: red;
+}
+
+.last-updated {
+  float: right;
+}
+
+.tweet {
+  width: 60%;
+}
+
+.time {
+  width: 8%;
+}
+
+.short-change {
+  width: 8%;
+}
+
+.long-change {
+  width: 8%;
 }
