@@ -1,5 +1,5 @@
 import React from "react";
-import ReactHighcharts from "react-highcharts/ReactHighstock.src";
+// import ReactHighcharts from "react-highcharts/ReactHighstock.src";
 import moment from "moment";
 
 const Chart = (props) => {
@@ -100,7 +100,7 @@ const Chart = (props) => {
   };
   return (
     <div>
-      <ReactHighcharts config={configPrice}></ReactHighcharts>
+      {/* <ReactHighcharts config={configPrice}></ReactHighcharts> */}
     </div>
   );
 };
