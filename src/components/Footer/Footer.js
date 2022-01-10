@@ -1,5 +1,6 @@
 import React from "react";
 import "./footer.css";
+
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 
@@ -47,14 +48,15 @@ function Footer() {
           </div>
         </div>
       </div>
-      <section class="social-media">
-        <div class="social-media-wrap">
-          <Link to="/" className="stockfluence">
-            Stockfluence
-            <i class="fab fa-typo3" />
-          </Link>
-          <small class="website-rights">Stockfluence © 2022</small>
-          <div class="social-icons">
+
+      <section class='social-media'>
+        <div class='social-media-wrap'>
+            <Link to='/description' className='stockfluence'>
+              Stockfluence
+              <i class='fab fa-typo3' />
+            </Link>
+          <small class='website-rights'>Stockfluence © 2022</small>
+          <div class='social-icons'>
             <Link
               class="social-icon-link facebook"
               to="/"
