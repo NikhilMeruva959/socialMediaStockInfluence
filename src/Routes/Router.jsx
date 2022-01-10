@@ -1,10 +1,10 @@
 import { Route, BrowserRouter } from "react-router-dom";
 import React, { Component } from "react";
 
-import Home from "../components/home/home";
+import Home from "../components/Home/home";
 import Trending from "../components/Trending/Trending.js";
 import About from "../components/About/About";
-import Header from "../components/header/header.js";
+import Header from "../components/Header/header.js";
 import Description from "../components/description/description";
 import Stock from "../components/stockPage/stock.jsx";
 

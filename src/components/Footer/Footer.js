@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css';
+import './footer.css';
 import Button from "../Button/Button";
 import { Link } from 'react-router-dom';
 
@@ -49,7 +49,7 @@ function Footer() {
       </div>
       <section class='social-media'>
         <div class='social-media-wrap'>
-            <Link to='/' className='stockfluence'>
+            <Link to='/description' className='stockfluence'>
               Stockfluence
               <i class='fab fa-typo3' />
             </Link>
