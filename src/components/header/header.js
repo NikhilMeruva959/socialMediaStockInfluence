@@ -13,8 +13,7 @@ const Header = () => (
         <Nav className="me-auto">
           <Nav.Link href="/getStarted">Get Started</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="/description">All Stocks</Nav.Link>
-          <Nav.Link href="/description">All Cryptos</Nav.Link>
+          <Nav.Link href="/description">Explore</Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link href="/contact">Contact</Nav.Link>

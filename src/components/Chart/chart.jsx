@@ -75,11 +75,6 @@ const Chart = (props) => {
           text: "1m",
         },
         {
-          type: "month",
-          count: 3,
-          text: "3m",
-        },
-        {
           type: "all",
           text: "All",
         },
