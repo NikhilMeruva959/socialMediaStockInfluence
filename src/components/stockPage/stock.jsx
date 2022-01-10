@@ -21,8 +21,7 @@ const Stock = (props) => {
   const [pLongTermChange, setPLongTermChange] = React.useState("");
   const [latestDate, setLatestDate] = React.useState("");
 
-  // twitter username queries that will be looked up.
-  // need to reformat table where tweets are displayed
+  // twitter usernames to lookup
   const data = {
     tsla: ["elonmusk", "tesla"],
     aapl: ["tim_cook"],
@@ -32,17 +31,26 @@ const Stock = (props) => {
     amc: ["AMCTheatres"],
     spy: ["StateStreetGA"],
     nvda: ["nvidia"],
+    amd: ["AMD"],
+    ocgn: ["Ocugen"],
+    pltr: ["PalantirTech"],
+    tlry: ["tilray"],
   };
 
+  // twitter query search params
   const queries = {
     tsla: ["tesla", "elon musk"],
     aapl: ["tim cook", "apple"],
     gme: ["GameStop"],
-    clov: ["Clover Health"],
+    clov: ["$clov"],
     hood: ["Robinhood"],
     amc: ["amc"],
-    spy: ["State Street Global Advisors"],
+    spy: ["$spy"],
     nvda: ["NVIDIA"],
+    amd: ["amd"],
+    ocgn: ["ocgn"],
+    pltr: ["Palantir"],
+    tlry: ["$tlry"],
   };
 
   const map = {
@@ -100,7 +108,7 @@ const Stock = (props) => {
       }
       tweets.push(temp2);
     }
-    let popularTweet = await getPopularTweets(queries[stockSymbol]);
+    let popularTweet = await getPopularTweets(queries[stockSymbol], 5);
     setPopularTweets(popularTweet);
     let pShortChange = [];
     let pLongChange = [];
