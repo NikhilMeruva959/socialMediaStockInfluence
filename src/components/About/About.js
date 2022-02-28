@@ -2,12 +2,14 @@ import React from 'react';
 
 import Icon1 from '../../images/twitterImg.png';
 import Icon2 from '../../images/stockImg.jpeg';
-import Icon3 from '../../images/img-4.jpg';
+import Icon3 from '../../images/missionImg.png';
 
 import { AboutContainer, AboutH1, AboutWrapper, AboutCard, AboutIcon, AboutH2, AboutP } from './AboutElements';
 
 const About = () => {
   return(
+    //Container -> Wrapper -> Card1 Card 2 Card 3
+    //Card1 -> Icon, H2, P
     <AboutContainer id="AboutMain">
       <AboutH1>About Us</AboutH1>
       <AboutWrapper>
@@ -19,7 +21,7 @@ const About = () => {
 
         <AboutCard>
           <AboutIcon src={Icon2}></AboutIcon>
-          <AboutH2>Reduce Expenses</AboutH2>
+          <AboutH2>Stock / Crypto</AboutH2>
           <AboutP>We primarly are focused on a select stocks and cryptos, but we are expanding the list daily.</AboutP>
         </AboutCard>
 
@@ -35,53 +37,7 @@ const About = () => {
 
 export default About;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Previous About Page
 
 // import React, { Component } from "react";
 // import { useState } from "react";
@@ -130,46 +86,3 @@ export default About;
 //         </div>
 //       </center>
 //     </div>
-
-
-
-
-
-    //   <Card style={{ width: "18rem" }}>
-    //     <Card.Img variant="top" src="holder.js/100px180" />
-    //     <Card.Body>
-    //       <Card.Title>Card Title</Card.Title>
-    //       <Card.Text>
-    //         Some quick example text to build on the card title and make up the
-    //         bulk of the card's content.
-    //       </Card.Text>
-    //       <Button variant="primary">Go somewhere</Button>
-    //     </Card.Body>
-    //   </Card>
-
-    //   <Card style={{ width: "18rem" }}>
-    //     <Card.Img variant="top" src="holder.js/100px180" />
-    //     <Card.Body>
-    //       <Card.Title>Card Title</Card.Title>
-    //       <Card.Text>
-    //         Some quick example text to build on the card title and make up the
-    //         bulk of the card's content.
-    //       </Card.Text>
-    //       <Button variant="primary">Go somewhere</Button>
-    //     </Card.Body>
-    //   </Card>
-    // </div>
-
-    //   <Card>
-    //   <Card.Header as="h5">Featured</Card.Header>
-    //   <Card.Body>
-    //     <Card.Title>Special title treatment</Card.Title>
-    //     <Card.Text>
-    //       With supporting text below as a natural lead-in to additional content.
-    //     </Card.Text>
-    //     <Button variant="primary">Go somewhere</Button>
-    //   </Card.Body>
-    // </Card>
-//   );
-// }
-// export default About;
