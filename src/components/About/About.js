@@ -1,31 +1,32 @@
 import React from 'react';
-import Icon1 from '../../images/img-6.jpg';
-import Icon2 from '../../images/img-3.jpg';
+
+import Icon1 from '../../images/twitterImg.png';
+import Icon2 from '../../images/stockImg.jpeg';
 import Icon3 from '../../images/img-4.jpg';
 
 import { AboutContainer, AboutH1, AboutWrapper, AboutCard, AboutIcon, AboutH2, AboutP } from './AboutElements';
 
 const About = () => {
   return(
-    <AboutContainer id="About">
-      <AboutH1>Our Services</AboutH1>
+    <AboutContainer id="AboutMain">
+      <AboutH1>About Us</AboutH1>
       <AboutWrapper>
         <AboutCard>
           <AboutIcon src={Icon1}></AboutIcon>
-          <AboutH2>Reduce Expenses</AboutH2>
-          <AboutP>Just some dummy text for now, will fill in with info.</AboutP>
+          <AboutH2>Tweet Data</AboutH2>
+          <AboutP>Stockfluence is a website to show the influence of tweets on todays markets.</AboutP>
         </AboutCard>
 
         <AboutCard>
           <AboutIcon src={Icon2}></AboutIcon>
           <AboutH2>Reduce Expenses</AboutH2>
-          <AboutP>Just some dummy text for now, will fill in with info.</AboutP>
+          <AboutP>We primarly are focused on a select stocks and cryptos, but we are expanding the list daily.</AboutP>
         </AboutCard>
 
         <AboutCard>
           <AboutIcon src={Icon3}></AboutIcon>
-          <AboutH2>Reduce Expenses</AboutH2>
-          <AboutP>Just some dummy text for now, will fill in with info.</AboutP>
+          <AboutH2>Our Mission</AboutH2>
+          <AboutP>To show the community how extraneous factors are affecting the stock market.</AboutP>
         </AboutCard>
       </AboutWrapper>
     </AboutContainer>

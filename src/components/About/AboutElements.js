@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.div`
-    height: 800px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    background:#010606;
+    background:#72A0C1;
 
     @media screen and (max-width: 768px){
         height: 1100px;
@@ -39,7 +39,8 @@ export const AboutWrapper = styled.div`
 export const AboutCard = styled.div`
     background:#fff;
     display:flex;
-    flex-direction:flex-start;
+    flex-direction:column;
+    justify-content: flex-start;
     align-items:center;
     border-radius:10px;
     max-height:340px;
@@ -61,7 +62,8 @@ export const AboutIcon = styled.img`
 `
 
 export const AboutH1 = styled.h1`
-    font-sixe:2.5rem;
+    font-family: sans-serif;
+    font-size: 60px;
     color:#fff;
     margin-bottom: 64px;
 
