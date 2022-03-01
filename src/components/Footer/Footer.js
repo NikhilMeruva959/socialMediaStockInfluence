@@ -1,10 +1,26 @@
 import React from "react";
-import "./footer.css";
+import "./Footer.css";
 
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
+import {useFormik} from "formik";
+import * as Yup from "yup";
 
-function Footer() {
+export default function Footer() {
+
+  const formik = useFormik({
+    initialValues: {
+      email: ""
+    },
+    validationSchema: Yup.object({
+        email: Yup.string().required("Required"),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+    }
+  });
+  console.log(formik.errors);
+
   return (
     <div className="footer-container">
       <section className="footer-subscription">
@@ -15,14 +31,18 @@ function Footer() {
           You can unsubscribe at any time.
         </p>
         <div className="input-areas">
-          <form>
+          <form onSubmit={formik.handleSubmit}>
             <input
               className="footer-input"
               name="email"
               type="email"
               placeholder="Email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
             />
-            <Button buttonStyle="btn--outline">Subscribe</Button>
+            {formik.touched.email && formik.errors.email ? <p>{formik.errors.email}</p> : null}
+            <button type="submit">Subscribe</button>
           </form>
         </div>
       </section>
@@ -103,5 +123,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;
