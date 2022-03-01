@@ -1,25 +1,23 @@
 import React from "react";
 import "./Footer.css";
 
-import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import {useFormik} from "formik";
 import * as Yup from "yup";
 
 export default function Footer() {
-
+  //using Formik for Subscribe form validation
   const formik = useFormik({
     initialValues: {
       email: ""
     },
     validationSchema: Yup.object({
-        email: Yup.string().required("Required"),
+        email: Yup.string().required("Required to join"),
     }),
     onSubmit: (values) => {
       console.log(values);
     }
   });
-  console.log(formik.errors);
 
   return (
     <div className="footer-container">
@@ -41,8 +39,9 @@ export default function Footer() {
               onBlur={formik.handleBlur}
               value={formik.values.email}
             />
-            {formik.touched.email && formik.errors.email ? <p>{formik.errors.email}</p> : null}
-            <button type="submit">Subscribe</button>
+            {formik.touched.email && formik.errors.email ? <p className="requiredFormikError">{formik.errors.email}</p> : null}
+
+            <button className="emailSubmitBtn" type="submit"><span>Subscribe</span></button>
           </form>
         </div>
       </section>
@@ -50,12 +49,12 @@ export default function Footer() {
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
             <h2>About Us</h2>
-            <Link to="/sign-up">How it works</Link>
+            <Link to="/about">How it works</Link>
           </div>
           <div class="footer-link-items">
             <h2>Contact Us</h2>
-            <Link to="/">Contact</Link>
-            <Link to="/">Support</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Support</Link>
           </div>
         </div>
         <div className="footer-link-wrapper">
@@ -77,7 +76,8 @@ export default function Footer() {
             </Link>
           <small class='website-rights'>Stockfluence © 2022</small>
           <div class='social-icons'>
-            <Link
+            {/* Will update this once I add our Social Media! */}
+            {/* <Link
               class="social-icon-link facebook"
               to="/"
               target="_blank"
@@ -116,7 +116,7 @@ export default function Footer() {
               aria-label="LinkedIn"
             >
               <i class="fab fa-linkedin" />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
